@@ -1,0 +1,20 @@
+{
+    "name": "mathiasbk/phptreeview",
+    "description": "Simple PHP library for generating a treeview",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Mathiasbk\\Phptreeview\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "mathiasbk",
+            "homepage": "https://github.com/mathiasbk"
+        }
+    ],
+    "require": {
+        "php": "*"
+    }
+}
