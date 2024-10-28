@@ -1,0 +1,86 @@
+.tree ul {
+    list-style-type: none;
+    padding-left: 20px;
+    position: relative;
+}
+
+.tree ul::before {
+    content: '';
+    border-left: 2px solid #ccc;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 10px;
+    width: 0;
+    height: 100%;
+}
+
+.tree li {
+    margin: 10px 0; /* Økt margin for mer vertikalt mellomrom */
+    padding: 0 0 0 20px;
+    position: relative;
+}
+
+.tree li::before {
+    content: '';
+    border-top: 2px solid #ccc;
+    position: absolute;
+    top: 15px;
+    left: -10px; /* Juster denne for å koble horisontalt til vertikalt */
+    width: 20px; /* Gjør linjen lang nok til å koble til venstre vertikale linje */
+    height: 0;
+}
+
+.tree li:last-child::before {
+    border-left: none;
+}
+
+.tree li:last-child::after {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 15px;
+    width: 20px; /* Gjør linjen lang nok til å koble til venstre vertikale linje */
+    height: 0;
+    border-top: 2px solid #ccc;
+}
+
+.tree li .node {
+    display: inline-block;
+    padding: 5px 10px;
+    color: #666;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.tree li .node:hover {
+    background: #c8e4f8;
+    color: #000;
+    border: 1px solid #94a0b4;
+}
+
+.tree li .toggle-icon {
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.tree li span.float-end {
+    margin-left: 10px;
+}
+
+.tree ul.collapsed {
+    display: none;
+}
+
+.tree ul .toggle-icon::before {
+    content: '▼';
+    font-size: 12px;
+}
+
+.tree ul.collapsed .toggle-icon::before {
+    content: '►';
+    font-size: 12px;
+}
