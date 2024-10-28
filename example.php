@@ -1,7 +1,3 @@
-<?php
-    include(src/PHPTreeview.php);
-?>
-
 <html>
 <head>
     <meta charset="utf-8">
@@ -16,7 +12,7 @@
 $statusArray = array(
             array(
                 'id' => 1,
-                'name' => 'Rot',
+                'name' => 'Root',
                 'children' => array(
                     array(
                         'id' => 2,
@@ -43,7 +39,10 @@ $statusArray = array(
             )
         );
 
+require_once("src/PHPTreeview.php");
 
+$treeview = new PHPTreeView();
+echo $treeview->buildTreeView($statusArray);
 
 ?>
 </body>
