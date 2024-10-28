@@ -1,4 +1,6 @@
 <?php 
+
+namespace Mathiasbk\Phptreeview;
 Class PHPTreeView {
     
     private $buttons = array();
