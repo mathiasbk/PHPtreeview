@@ -42,6 +42,11 @@ $statusArray = array(
 require_once("src/PHPTreeview.php");
 
 $treeview = new PHPTreeView();
+
+//Add buttons
+$treeview->AddButton('Edit', 'edit.php', 'btn btn-primary');
+
+//display the treeview
 echo $treeview->buildTreeView($statusArray);
 
 ?>
