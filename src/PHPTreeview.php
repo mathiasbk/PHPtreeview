@@ -1,7 +1,7 @@
 <?php 
 
-namespace Mathiasbk\Phptreeview;
-Class PHPTreeView {
+namespace mathiasbk\phptreeview;
+Class phptreeview {
     
     private $buttons = array();
 
