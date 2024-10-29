@@ -13,11 +13,26 @@ Class phptreeview {
         return $phptreeview;
     }
     public function buildTreeView($nodes) {
+
+        if (!is_array($nodes)) {
+            return ''; // Return empty if is not an array
+        }
+        
         $tree = '<div class="tree">';
         $tree .= '<ul>';
     
         foreach ($nodes as $node) {
             
+            //Check if the required keys are set
+            if (!isset($node['id'], $node['name'], $node['children'])) {
+                continue; 
+            }
+            if (!isset($node['children']) || !is_array($node['children'])) {
+                //If the children array is not set, set it to an empty array
+                $node['children'] = [];
+            }
+            
+
             $tree .= '<li>';
             $tree .= '<span class="node" data-group-id="' . $node['id'] . '">' . htmlspecialchars($node['name']) . '</span>';
             

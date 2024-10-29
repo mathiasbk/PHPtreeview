@@ -18,6 +18,10 @@ $ composer require mathiasbk/phptreeview
 ## Usage
 
 ``` php
-$treeview = new Mathiasbk\PHPTreeview\Createphptreeview();
+$treeview = new PHPTreeView::Createphptreeview();
+
+//add a button
+$treeview->AddButton("test", "action.php", "btn btn-success");
+
 $treeview->buildTreeView($data);
 ```
